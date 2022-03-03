@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'PTSerif-Regular', sans-serif;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+font-family: 'PTSerif-Regular';
+src: url("./fonts/PTSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'PTSerif-Bold';
+  src: url("./fonts/PTSerif-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'PTSerif-BoldItalic';
+  src: url("./fonts/PTSerif-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Pt-Serif-Italic';
+  src: url("./fonts/PTSerif-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}

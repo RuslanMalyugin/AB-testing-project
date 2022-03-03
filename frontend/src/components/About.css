@@ -1,0 +1,18 @@
+.Points {
+    background: #ADE8F4;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-end;
+    line-height: 32px;
+    margin: 0 5%;
+    padding: 7% 6%;
+    list-style-type: disc;
+    gap: 10px;
+}
+
+.Point {
+    color: #03045E;
+    font-size: 200%;
+    width: 100%;
+}

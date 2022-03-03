@@ -1,0 +1,44 @@
+.Main {
+    display: flex;
+    align-items: center;
+    background: #92A8D1;
+}
+
+.Banner {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1% 1% 1% 1%;
+    background: #F7CAC9;
+    border-radius: 0 25px 25px 0px;
+    gap: 20px;
+}
+
+.BannerTop {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 200%;
+}
+
+.BannerDown {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 200%;
+}
+
+.Reg {
+    font-weight: 800;
+    font-size: 300%;
+    color: #03045E;
+    text-align: center;
+    text-decoration: none;
+}
+
+.PicDesc {
+    padding: 1% 1% 1% 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 150%;
+}

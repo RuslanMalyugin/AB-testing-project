@@ -1,0 +1,49 @@
+.Orders {
+    margin: 0% 0% 25% 0%;
+}
+.OrderHat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.TakeButton {
+    font-size: 120%;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif !important;
+    background: #0096C7;
+    border: 2px solid #0096C7;
+}
+
+.TakeButton:hover {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+table {
+    font-size: 150%;
+    font-weight: 100;
+    background: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    font-weight: normal;
+    color: #CAF0F8;
+    background: #023E8A;
+    padding: 10px 8px;
+}
+
+td {
+    color: #ADE8F4;
+    background: #0096C7;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+
+tr:hover td {
+    color: #6699ff;
+}

@@ -1,0 +1,32 @@
+.Footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 300;
+    background: #00B4D8;
+    color: #03045E;
+    padding:0 5%;
+    min-height: 9vh;
+}
+
+.Contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.Contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ADE8F4;
+}
+
+

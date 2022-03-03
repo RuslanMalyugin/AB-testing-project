@@ -1,0 +1,27 @@
+.LoginForm {
+    color: #03045E;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    margin: 9% 9% 9% 9%;
+}
+
+.LoginForm input {
+    width: 100%;
+    background: #0096C7;
+    color: #ADE8F4;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    mask-border: none;
+    font-family: 'Montserrat', sans-serif !important;
+
+    height: 30px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+
+}
