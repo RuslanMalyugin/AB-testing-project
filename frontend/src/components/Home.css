@@ -1,6 +1,8 @@
 .Main {
     display: flex;
     align-items: stretch;
+    align-self: flex-start;
+    flex-basis: auto;
     background: #92A8D1;
 }
 
@@ -10,8 +12,9 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding: 5% 15% 5% 15%;
+    padding: 5% 5% 5% 5%;
     background: #F7CAC9;
+
     border-radius: 0 25px 25px 0px;
     gap: 20px;
 }
@@ -29,7 +32,7 @@
 
 .Text {
     font-style: normal;
-    font-weight: 900;
+    font-weight: bold;
     font-size: 200%;
 }
 
@@ -37,7 +40,7 @@
     font-style: normal;
     font-weight: 900;
     font-size: 150%;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     text-align: center;
 }
 
@@ -45,8 +48,25 @@
     font-style: normal;
     font-weight: 900;
     font-size: 100%;
-    white-space: nowrap;
+
     text-align: center;
+}
+
+.LineUp {
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.LineDown {
+    border-bottom: 1px solid black;
+    width: 74%;
+}
+
+.LongText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    text-align: left;
 }
 
 .Button {
@@ -75,13 +95,14 @@
     margin-left: auto;
     flex-direction: column;
     background: #92A8D1;
-    padding: 0%;
+    width: 50%;
+    padding: 4%;
     gap: 20px;
 }
 
 .BannerSystemInfo {
     display: flex;
-    /*align-items: flex-start;*/
+    align-items: flex-start;
     flex-direction: column;
     margin-left: auto;
     padding: 5% 5% 5% 5%;
@@ -104,11 +125,12 @@
 }
 
 .BannerDown {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 100%;
+    display: flex;
+    flex-direction: column;
     align-self: center;
+    align-items: center;
     padding: 5% 5% 5% 5%;
+    gap: 10px;
 }
 
 .Reg {
@@ -136,7 +158,7 @@
     align-items: flex-end;
     line-height: 32px;
     margin: 0;
-    padding: 0;
+    padding: 4%;
     list-style-type: disc;
     gap: 5px;
 }

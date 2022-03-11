@@ -37,8 +37,8 @@ function Header() {
             </div>
             <div className="items">
                 <div className="item">
-                    <a href='/about'>
-                        О нас
+                    <a href="#aboutUs">
+                        О нас <br/>
                     </a>
                 </div>
                 <div className="item">
