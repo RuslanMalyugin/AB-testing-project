@@ -16,7 +16,7 @@ function Home() {
         <main className='Main'>
             <div className='BannerLeft'>
                 <div className='BannerTop'>
-                    ПРОСТОЕ РЕШЕНИЕ,<br/>
+                    ПРОСТОЕ РЕШЕНИЕ<br/>
                     НЕПРОСТЫХ <br/>
                     ЗАДАЧ
                 </div>
