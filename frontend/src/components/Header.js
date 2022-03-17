@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logo from "./imgs/MTS_Logo_rus_r.jpg";
+import logo from "./imgs/AB-logo.png";
 
 function LogOut() {
     const handleSubmit = (e: React.FormEvent) => {
@@ -12,7 +12,7 @@ function LogOut() {
     return (
         <form onSubmit={handleSubmit}>
             <button className='LogOutButton'>
-                      Выход
+                Выход
             </button>
         </form>
     );
@@ -32,21 +32,20 @@ function Header() {
         <div className="Header">
             <div className="logo">
                 <a href='/'>
-                    <img src={logo} className="MTS_Logo_rus_r.jpg" width={300}/>
+                    <img src={logo} width={100}/>
                 </a>
             </div>
-            <nav>
-                <a href='/take_order'>
-                    Взять заказ
-                </a>
-                <a href='/make_order'>
-                    Оставить заказ
-                </a>
-                <a href='/about'>
-                    О нас
-                </a>
-                <Greeting/>
-            </nav>
+            <div className="items">
+                <div className="item">
+                    <a href="#aboutUs">
+                        О нас <br/>
+                    </a>
+                </div>
+                <div className="item">
+                    <Greeting/>
+                </div>
+            </div>
+
         </div>
     );
 }
