@@ -8,8 +8,6 @@ CREATE TABLE AB_test.Projects_Common_Information
   Project_ID INTEGER UNIQUE PRIMARY KEY,
   Project_Name TEXT default NULL,
   Client_ID INTEGER default NULL,
-  Main_Metric VARCHAR(255) default NULL,
-  Others_Metrics VARCHAR(255) default NULL,
   Time_Begin_Testing DATE,
   Time_End_Testing DATE,
   City VARCHAR(255),
@@ -26,6 +24,8 @@ DROP TABLE IF EXISTS AB_test.Projects_Metric_Information;
 CREATE TABLE AB_test.Projects_Metric_Information
 (
     Project_ID INTEGER UNIQUE PRIMARY KEY,
+    Main_Metric VARCHAR(255) default NULL,
+    Others_Metrics VARCHAR(255) default NULL,
     Criteria VARCHAR(255) DEFAULT 'two-sided',
     Method VARCHAR(255),
     Test_power FLOAT DEFAULT 0.8,
@@ -38,24 +38,24 @@ CREATE TABLE AB_test.Projects_Metric_Information
 DROP TABLE IF EXISTS AB_test.Metrics;
 CREATE TABLE AB_test.Metrics
 (
-    Project_ID INTEGER UNIQUE PRIMARY KEY,
-    Gross_Profit INTEGER,
-    Revenue INTEGER,
-    Calls_Number INTEGER,
-    Contracts_Number INTEGER,
-    New_Clients_Number INTEGER,
-    Repeat_Purchases_Percentage INTEGER,
-    Active_Actions_number INTEGER
+    Project_ID INTEGER,
+    Date DATE,
+    Metric VARCHAR(255),
+    Value INTEGER
 );
 
 DROP TABLE IF EXISTS AB_test.Users;
 CREATE TABLE AB_test.Users
 (
-    Client_ID INTEGER UNIQUE PRIMARY KEY,
-    Client_Name VARCHAR(50),
+    User_ID INTEGER UNIQUE PRIMARY KEY,
+    User_Name VARCHAR(50),
     Gender VARCHAR(50),
     Project_ID INTEGER,
     AB_Group VARCHAR(1),
     Registration_Data DATE,
     Hours_Attended INTEGER
 );
+
+
+
+
