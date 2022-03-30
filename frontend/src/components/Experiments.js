@@ -1,9 +1,11 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer';
-import './Registration.css';
+import './Experiments.css';
 import {createOrder} from "../services/Api";
+import plus from "./imgs/plus.png";
 
+
+/*
 function RegistrationForm() {
     const [spec, setSpec] = React.useState('');
     const [date, setDate] = React.useState('');
@@ -51,18 +53,43 @@ function RegistrationForm() {
         </form>
     );
 }
+*/
 
 
-function NewOrder() {
+
+function Experiments() {
     return (
         <div>
             <Header/>
-            <div className="Rectangle">
-                <RegistrationForm/>
-            </div>
-            <Footer/>
+            <main className='NewMain'>
+                <div className='Rectangle'>
+                    <div className='Menu' >
+                        <div className='SmallRecLeft' >
+                            Текущие
+                        </div>
+                        <div className='SmallRecRight' >
+                            Завершённые
+                        </div>
+                    </div>
+                    <div className='SmallRecUndButton'>
+
+                        <div className='RoundButton'>
+                            <a href='/new_exp'>
+                                <div className='Plus'>
+                                    <img src={plus}/>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
         </div>
     );
 }
 
-export default NewOrder;
+
+
+export default Experiments;
+
