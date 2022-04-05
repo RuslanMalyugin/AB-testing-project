@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer';
 import './Registration.css';
 import {createUser} from "../services/Api";
 
@@ -70,7 +69,6 @@ function Registration() {
             <div className="Rectangle">
                 <RegistrationForm/>
             </div>
-            <Footer/>
         </div>
     );
 }

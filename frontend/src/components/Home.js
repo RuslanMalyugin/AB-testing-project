@@ -22,7 +22,7 @@ function Home() {
                 </div>
             </div>
             <div className='BannerRight'>
-                <div className='Text'>
+                <div className='TextHome'>
                     A/B-testing platform <br/>
                 </div>
                 <div className='Button'>

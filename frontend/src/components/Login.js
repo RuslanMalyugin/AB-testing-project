@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer';
 import './Registration.css';
 import './Login.css';
 import {authUser} from '../services/Api.js';
@@ -69,7 +68,6 @@ function Login() {
             <div className="Rectangle">
                 <Auth />
             </div>
-            <Footer/>
         </div>
     );
 }

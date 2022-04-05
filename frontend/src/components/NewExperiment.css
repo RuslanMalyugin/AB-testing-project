@@ -17,13 +17,31 @@
     margin-top: 1%;
 }
 
-.DataBox {
+.RecCenter input {
     font-size: 120%;
+    font-family: 'PTSerif-Regular', sans-serif;
     color: rgba(0,0,0,0.5);
     display: flex;
+    border: #000000 solid 1px;
+    padding: 0 10% 0 2%;
+    margin-top: 1%;
+}
+
+.DataBox {
+    font-size: 80%;
+    color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
     border: #000000 dashed 1px;
-    padding: 2% 10% 2% 2%;
-    margin: 5% 10% 0 10%;
+    padding: 2% 2% 2% 2%;
+    margin: 5% 10% 5% 10%;
+}
+
+.Text {
+    font-size: 155%;
+    font-weight: normal;
+    margin-bottom: 2%;
+    color: rgba(0,0,0,0.5);
 }
 
 .RecCenter {
@@ -54,5 +72,29 @@
     border-radius: 48px;
     padding: 1% 5%;
     margin: 5% 20% 2% 5%;
+
+}
+
+
+.fileInput {
+    border-bottom: 4px solid lightgray;
+    border-right: 4px solid lightgray;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.submitButton {
+    padding: 12px;
+    margin-left: 10px;
+    background: white;
+    border: 4px solid lightgray;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 10pt;
+    cursor: pointer;
+    /*&: hover;*/
 
 }
