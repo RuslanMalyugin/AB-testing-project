@@ -6,7 +6,8 @@ import About from './About'
 import Registration from './Registration'
 import Login from "./Login";
 import Orders from "./Orders";
-import NewOrder from "./NewOrder";
+import Experiments from "./Experiments";
+import NewExperiment from "./NewExperiment";
 
 function App() {
     return (
@@ -18,7 +19,8 @@ function App() {
                     <Route path='/registration' element={< Registration/>}/>
                     <Route path='/login' element={< Login/>}/>
                     <Route path='/take_order' element={< Orders />} />
-                    <Route path='/make_order' element={< NewOrder />} />
+                    <Route path='/account' element={< Experiments />} />
+                    <Route path='/new_exp' element={< NewExperiment />} />
                 </Routes>
             </Router>
         </div>

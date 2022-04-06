@@ -22,12 +22,12 @@ function Home() {
                 </div>
             </div>
             <div className='BannerRight'>
-                <div className='Text'>
+                <div className='TextHome'>
                     A/B-testing platform <br/>
                 </div>
                 <div className='Button'>
                     <div className='SmallText'>
-                        <a href='/registration'>
+                        <a href='/account'>
                             Приступить к работе
                         </a>
                     </div>
@@ -63,7 +63,7 @@ function Home() {
                 </div>
                 <div className='LongText'>
                     A/B-тестирование позволяет оценивать количественные <br/>
-                    показатели работы двух вариантов, например,  а также <br/>
+                    показатели работы двух вариантов, а также <br/>
                     сравнивать их между собой. Ещё А/В-тестирование помогает <br/>
                     оценивать эффективность изменений  например, <br/>
                     добавления новых элементов дизайна или призывов к действию. <br/>

@@ -1,0 +1,80 @@
+.NewMain {
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+
+    /*flex-basis: auto;*/
+    /*flex-direction: column;*/
+    background: #92A8D1;
+    /*position: fixed;*/
+
+
+    padding: 0 5%;
+    height: 77.5vh;
+}
+
+.Rectangle {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+
+    background: #FFFFFF;
+    border: solid #000000 1px;
+}
+
+.Menu {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.SmallRecLeft {
+    display: flex;
+    width: 50%;
+    font-size: 120%;
+    background: #F7CAC9;
+    padding: 1% 5% 1% 2%;
+    border: solid 1px #000000;
+    border-radius: 10px 0px 0 0;
+}
+
+.SmallRecRight {
+    display: flex;
+    width: 50%;
+    font-size: 120%;
+    background: #F7CAC9;
+    padding: 1% 5% 1% 2%;
+    border: solid 1px #000000;
+    border-radius: 0px 10px 0 0;
+}
+
+.RoundButton {
+    background: rgba(247, 202, 201, 0.58);
+    margin: 1%;
+    padding: 1%;
+    box-sizing: content-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 2vw;
+    width: 2vw;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 50%;
+}
+
+.SmallRecUndButton {
+    display: flex;
+    background: #FFFFFF;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.Plus {
+    padding: 1% 1% 1% 1%;
+    display: flex;
+    max-width: 50%;
+    height: 100%;
+}
