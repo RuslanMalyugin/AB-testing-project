@@ -38,25 +38,25 @@ class Splitter(object):
     sample_size : int
         размер общей выборки 
     w_1 : float
-        доля пользователей тестовой группы
+        доля пользователей контрольной группы
         
     Methods:
     ---------
     split()
-        делит пользователей на группы test и control,
+        делит пользователей на группы control и test,
         возращает id-шники каждой из групп
     stratifed_split()
-        делит пользователей на группы test и control,
+        делит пользователей на группы  control и test,
         методом стратификации и
         возращает id-шники каждой из групп
         P.S.: текущая версия метода работает только для 
               случая w_1=0.5
     """
     
-    def __init__(self, data, test_group_size, w_1=0.5):
+    def __init__(self, data, control_group_size, w_1=0.5):
         
         self.data = data
-        self.sample_size = math.ceil(float(test_group_size) / w_1)
+        self.sample_size = math.ceil(float(control_group_size) / w_1)
         self.w_1 = w_1
     
     def split(self, salt=None):
@@ -74,12 +74,12 @@ class Splitter(object):
         # сортируем пользователей по хешу
         df.sort_values(by='hashed_id', inplace=True)
 
-        # разбиваем пользователей на группы A и B с весами w_1 и w_2 (где: w_1 + w_2 = 1)
+        # разбиваем пользователей на группы A и B с весами w_1 и 1-w_1
         num_a = int(self.w_1 * self.sample_size)
-        test_group = df['id_column'][:num_a].values
-        control_group = df['id_column'][num_a:].values
+        control_group = df['id_column'][:num_a].values
+        test_group = df['id_column'][num_a:].values
 
-        return test_group, control_group
+        return control_group, test_group
     
     def stratifed_split(self, covariate):
         df = self.data[['id_column', covariate]]
@@ -87,9 +87,9 @@ class Splitter(object):
         #мно-во знаечений ковариаты
         cnt = set(df[covariate])
         
-        #массив id-шников тестовой и контрольной группы
-        test_group = np.array([])
+        #массив id-шников контрольной и тестовой группы
         control_group = np.array([])
+        test_group = np.array([])
         
         #пройдёмся по каждой группе, который 
         #составленны из равных значений ковариаты
@@ -100,10 +100,10 @@ class Splitter(object):
             subgroup_size  = int((self.sample_size * new_df.shape[0] / df.shape[0] + 1) / 2)
             
             new_id_list = np.random.choice(new_df['id_column'], (2, subgroup_size), replace = False)
-            test_group = np.concatenate((test_group, new_id_list[0]))
-            control_group = np.concatenate((control_group, new_id_list[1]))
+            control_group = np.concatenate((control_group, new_id_list[0]))
+            test_group = np.concatenate((test_group, new_id_list[1]))
             
-        return test_group, control_group
+        return control_group, test_group
         
 
      
