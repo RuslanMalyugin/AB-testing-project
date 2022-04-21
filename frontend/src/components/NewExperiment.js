@@ -3,6 +3,7 @@ import Header from './Header';
 import './Experiments.css';
 import './NewExperiment.css';
 import axios from 'axios';
+import {AuthProvider} from "../services/Api";
 
 
 class Uploader extends Component {
@@ -55,8 +56,8 @@ class Uploader extends Component {
                     Место для файла с пользователями
                 </div>
 
-                <input type="file"  onChange={this.onFileChange}/>
-                <button  onClick={this.onFileUpload}>
+                <input type="file" onChange={this.onFileChange}/>
+                <button onClick={this.onFileUpload}>
                     Upload!
                 </button>
             </div>
@@ -119,34 +120,35 @@ function NewForm() {
 function NewExperiment() {
     return (
         <div>
-            <Header/>
-            <main className='MainNewExp'>
-                <div className='Rectangle'>
+            <AuthProvider>
+                <Header/>
+                <main className='MainNewExp'>
+                    <div className='Rectangle'>
 
-                    <div className='Menu'>
-                        <div className='SmallRecLeft'>
-                            Текущие
+                        <div className='Menu'>
+                            <div className='SmallRecLeft'>
+                                Текущие
+                            </div>
+                            <div className='SmallRecRight'>
+                                Завершённые
+                            </div>
                         </div>
-                        <div className='SmallRecRight'>
-                            Завершённые
+
+                        <NewForm/>
+
+                        <div className='SmallRecUndButton '>
+                            <div className='ButtonConcl'>
+                                Итог
+                            </div>
+                            <div className='ButtonMoreConcl'>
+                                Подробная информация
+                            </div>
                         </div>
+
                     </div>
 
-                    <NewForm/>
-
-                    <div className='SmallRecUndButton '>
-                        <div className='ButtonConcl'>
-                            Итог
-                        </div>
-                        <div className='ButtonMoreConcl'>
-                            Подробная информация
-                        </div>
-                    </div>
-
-                </div>
-
-            </main>
-
+                </main>
+            </AuthProvider>
         </div>
     );
 }

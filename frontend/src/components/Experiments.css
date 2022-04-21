@@ -2,14 +2,7 @@
     display: flex;
     align-items: center;
     align-content: center;
-
-
-    /*flex-basis: auto;*/
-    /*flex-direction: column;*/
     background: #92A8D1;
-    /*position: fixed;*/
-
-
     padding: 0 5%;
     height: 77.5vh;
 }

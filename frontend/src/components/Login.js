@@ -1,62 +1,46 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Header from './Header';
 import './Registration.css';
 import './Login.css';
-import {authUser} from '../services/Api.js';
+import AuthContext from '../services/Api.js';
+import {Link} from "react-router-dom";
 
 function Auth() {
-    const [password, setPassword] = React.useState('');
-    const [username, setUsername] = React.useState('');
-    const [usernameErr, setUsernameErr] = React.useState('');
-    const [passwordErr, setPasswordErr] = React.useState('');
-
-    const handleSubmit = (e: React.FormEvent) => {
+    const {loginUser} = useContext(AuthContext);
+    const handleSubmit = e => {
         e.preventDefault();
-        const formData = new FormData(e.target)
-        authUser(Object.fromEntries(formData))
-            .then(data => {
-                if (data.hasOwnProperty('username')) {
-                    setUsernameErr(data.username)
-                    setPasswordErr(data.password)
-                } else if (data.hasOwnProperty('password')) {
-                    setUsernameErr(data.username)
-                    setPasswordErr(data.password)
-                } else if (data.hasOwnProperty('detail')) {
-                    setUsernameErr(data.detail)
-                    setPasswordErr(data.password)
-                } else if (data.hasOwnProperty('access_token') || data.hasOwnProperty('refresh')) {
-                    localStorage.setItem('access_token', data.access)
-                    window.location.href = "/"
-                }
-            })
+        const username = e.target.username.value;
+        const password = e.target.password.value;
+        username.length > 0 && loginUser(username, password);
     };
 
+
     return (
+
         <form onSubmit={handleSubmit} className="LoginForm">
             <div className="RegName">
                 Логин:
             </div>
-            <div className="Text">
+            <div className="RegText">
                 <div>Логин:</div>
-                <input type='username' name='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+                <input type="text" id="username" placeholder="Enter Username"/>
             </div>
-            <div className="Text">
+            <div className="RegText">
                 <div>Пароль:</div>
-                <input type='password' name='password' id='password' value={password}
-                       onChange={(e) => setPassword(e.target.value)}/>
+                <input type="password" id="password" placeholder="Enter Password"/>
             </div>
 
-            <div className="Enter">
-                <button className='RegButton'>
-                    Войти
-                </button>
-            </div>
+            <button className='LogButton'>
+                Войти
+            </button>
 
-            <a className='AlreadyReg' href='/registration'>
+
+            <Link className='AlreadyReg' to='/registration'>
                 Нет аккаунта?
-            </a>
+            </Link>
 
         </form>
+
     );
 }
 
@@ -65,8 +49,10 @@ function Login() {
     return (
         <div>
             <Header/>
-            <div className="Rectangle">
-                <Auth />
+            <div className="RegMain">
+                <div className="RegRectangle">
+                    <Auth/>
+                </div>
             </div>
         </div>
     );

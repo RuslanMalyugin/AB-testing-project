@@ -1,51 +1,56 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import Header from './Header';
 import './Registration.css';
-import {createUser} from "../services/Api";
+import AuthContext, {AuthProvider} from "../services/Api";
 
 function RegistrationForm() {
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [username, setUsername] = React.useState('');
-    const [usernameErr, setUsernameErr] = React.useState('');
-    const [passwordErr, setPasswordErr] = React.useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [password2, setPassword2] = useState("");
+    const {registerUser} = useContext(AuthContext);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        const formData = new FormData(e.target)
-        createUser(Object.fromEntries(formData)).then(data => {
-            if (data.hasOwnProperty('username')) {
-                if (data.username === username) {
-                    window.location.href = "/"
-                } else {
-                    setUsernameErr(data.username)
-                    setPasswordErr(data.password)
-                }
-            } else if (data.hasOwnProperty('password')) {
-                setUsernameErr(data.username)
-                setPasswordErr(data.password)
-            }
-        })
+        registerUser(username, password, password2);
     };
 
     return (
+
         <form onSubmit={handleSubmit} className="RegistrationForm">
             <div className="RegName">
                 Регистрация:
             </div>
-            <div className="Text">
-                <div>Электронная почта:</div>
-                <input type="email" name='email' placeholder="example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div className="Text">
+            <div className="RegText">
                 <div>Логин:</div>
-                <input type='username' name='username' value={username} onChange={(e) => setUsername(e.target.value)} />
-                {usernameErr}
+                <input
+                    type="text"
+                    id="username"
+                    onChange={e => setUsername(e.target.value)}
+                    placeholder="Username"
+                    required
+                />
             </div>
-            <div className="Text">
-                <div>Пароль:</div>
-                <input type='password' name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                {passwordErr}
+            <div className="RegText">
+                <label htmlFor="password">Пароль</label>
+                <input
+                    type="password"
+                    id="password"
+                    onChange={e => setPassword(e.target.value)}
+                    placeholder="Password"
+                    required
+                />
+            </div>
+
+            <div className="RegText">
+                <label htmlFor="password">Повторите пароль</label>
+                <input
+                    type="password"
+                    id="confirm-password"
+                    onChange={e => setPassword2(e.target.value)}
+                    placeholder="Confirm Password"
+                    required
+                />
+                <p>{password2 !== password ? "Passwords do not match" : ""}</p>
             </div>
 
             <div className="Enter">
@@ -58,18 +63,23 @@ function RegistrationForm() {
                 Уже есть аккаунт?
             </a>
         </form>
+
     );
 }
 
 
 function Registration() {
     return (
-        <div>
-            <Header/>
-            <div className="Rectangle">
-                <RegistrationForm/>
+        <AuthProvider>
+            <div>
+                <Header/>
+                <div className="RegMain">
+                    <div className="RegRectangle">
+                        <RegistrationForm/>
+                    </div>
+                </div>
             </div>
-        </div>
+        </AuthProvider>
     );
 }
 
