@@ -1,33 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Header.css';
 import logo from "./imgs/AB-logo.png";
-
-function LogOut() {
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        localStorage.removeItem("access_token")
-        window.location.reload();
-
-    };
-    return (
-        <form onSubmit={handleSubmit}>
-            <button className='LogOutButton'>
-                Выход
-            </button>
-        </form>
-    );
-}
-
-function Greeting(props) {
-    if (localStorage.getItem('access_token') !== "undefined" && localStorage.getItem('access_token')) {
-        return <LogOut/>;
-    }
-    return <a href='/registration'>
-        Логин
-    </a>;
-}
+import AuthContext from "../services/Api";
 
 function Header() {
+
+    const {user, logoutUser} = useContext(AuthContext);
+
     return (
         <div className="Header">
             <div className="logo">
@@ -37,13 +16,23 @@ function Header() {
             </div>
             <div className="items">
                 <div className="item">
-                    <a href="#aboutUs">
+                    <a href="/#aboutUs">
                         О нас <br/>
                     </a>
                 </div>
-                <div className="item">
-                    <Greeting/>
-                </div>
+
+                {user ? (
+                    <button onClick={logoutUser} className='item'>
+                        Выход
+                    </button>
+                ) : (
+                    <div className="item">
+                        <a href='/registration'>
+                            Логин
+                        </a>
+                    </div>
+                )}
+
             </div>
 
         </div>
