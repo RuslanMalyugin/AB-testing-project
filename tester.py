@@ -40,18 +40,37 @@ class Tester(object):
         self.metrics = metrics
         self.sgn_lev = sgn_lev 
         
-    def effect(self, ):
+    def t_test(self, ):
         res = {} 
         res["effect_value"] = (self.test_data[self.metrics].mean() 
                               / self.control_data[self.metrics].mean() - 1)
         
         #находим p-value с помощью t-test
-        _, p_val = sps.ttest_ind(self.control_data[self.metrics].values,
+        t_stat, p_val = sps.ttest_ind(self.control_data[self.metrics].values,
                                        self.test_data[self.metrics].values,
                                        equal_var=False)  
         #определим статистическую значимость 
         res["statistically significant"] = (p_val <= self.sgn_lev)
+        res["t_statistic"] = t_stat
+        return res
+    
+    def bootstrap(self, ):
+        res = {}
+        eff_list = []
+        for i in range(1000):
+            a_group_values = self.control_data[self.metrics].values
+            b_group_values = self.test_data[self.metrics].values
+            bs_a = np.random.choice(a_group_values, size=len(a_group_values), replace=True)
+            bs_b = np.random.choice(b_group_values, size=len(b_group_values), replace=True)
+            eff_i = bs_b.mean() / bs_a.mean() - 1
+            eff_list.append(eff_i)
         
-        return res     
+        effect = np.mean(eff_list)
+        ci = np.percentile(eff_list, q=[2.5, 97.5])
+        
+        res["effect_value"] = effect
+        res["confidence interval"] = ci
+        
+        return res
     
         
