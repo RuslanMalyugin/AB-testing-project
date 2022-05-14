@@ -77,6 +77,7 @@ class Tester(object):
         res["effect_value"] = effect
         res["confidence interval"] = ci
         res["statistically significant"] = (p_val <= self.sgn_lev)
+        res["data"] = eff_list
         
         return res
     
