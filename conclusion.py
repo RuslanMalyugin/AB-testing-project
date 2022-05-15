@@ -24,11 +24,11 @@ class Graph(object):
         
     def answer(self, ):
         if not self.stat_significant:
-        	return "Effect is statistically insignificant"
-        if self.conf_interval[1] <= 0:
+            return "Effect is statistically insignificant"
+        elif self.conf_interval[1] <= 0:
             return "Lose"
-        else self.conf_interval[0] >= 0:
-            return "Win"
+        
+        return "Win"
         
             
         
