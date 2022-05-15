@@ -68,15 +68,9 @@ class Tester(object):
         effect = np.mean(eff_list)
         ci = np.percentile(eff_list, q=[2.5, 97.5])
         
-        p_1 = sps.norm.cdf(x = 0, loc = np.mean(eff_list), 
-                       scale = np.std(eff_list))
-        p_2 = sps.norm.cdf(x = 0, loc = -np.mean(eff_list), 
-                       scale = np.std(eff_list))
-        p_val = min(p_1, p_2) * 2
-        
         res["effect_value"] = effect
         res["confidence interval"] = ci
-        res["statistically significant"] = (p_val <= self.sgn_lev)
+        res["statistically significant"] = (0 <= ci[0]) or (ci[1] <= 0)  
         res["data"] = eff_list
         
         return res
