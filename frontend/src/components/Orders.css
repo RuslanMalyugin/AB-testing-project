@@ -21,29 +21,29 @@
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-table {
-    font-size: 150%;
-    font-weight: 100;
-    background: white;
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
+/*table {*/
+/*    font-size: 150%;*/
+/*    font-weight: 100;*/
+/*    background: white;*/
+/*    width: 100%;*/
+/*    border-collapse: collapse;*/
+/*    text-align: left;*/
+/*}*/
 
-th {
-    font-weight: normal;
-    color: #CAF0F8;
-    background: #023E8A;
-    padding: 10px 8px;
-}
+/*th {*/
+/*    font-weight: normal;*/
+/*    color: #CAF0F8;*/
+/*    background: #023E8A;*/
+/*    padding: 10px 8px;*/
+/*}*/
 
-td {
-    color: #ADE8F4;
-    background: #0096C7;
-    padding: 9px 8px;
-    transition: .3s linear;
-}
+/*td {*/
+/*    color: #ADE8F4;*/
+/*    background: #0096C7;*/
+/*    padding: 9px 8px;*/
+/*    transition: .3s linear;*/
+/*}*/
 
-tr:hover td {
-    color: #6699ff;
-}
+/*tr:hover td {*/
+/*    color: #6699ff;*/
+/*}*/

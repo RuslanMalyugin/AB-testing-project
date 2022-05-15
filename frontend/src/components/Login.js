@@ -19,7 +19,7 @@ function Auth() {
 
         <form onSubmit={handleSubmit} className="LoginForm">
             <div className="RegName">
-                Логин:
+                Войти:
             </div>
             <div className="RegText">
                 <div>Логин:</div>

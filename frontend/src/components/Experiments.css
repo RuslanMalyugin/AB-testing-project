@@ -26,19 +26,23 @@
 }
 
 .SmallRecLeft {
-    display: flex;
     width: 50%;
-    font-size: 120%;
+    font-size: 150%;
     background: #F7CAC9;
     padding: 1% 5% 1% 2%;
     border: solid 1px #000000;
     border-radius: 10px 0px 0 0;
+    text-align: center;
+}
+
+.Underline {
+    text-decoration: underline;
 }
 
 .SmallRecRight {
-    display: flex;
     width: 50%;
-    font-size: 120%;
+    font-size: 150%;
+    text-align: center;
     background: #F7CAC9;
     padding: 1% 5% 1% 2%;
     border: solid 1px #000000;
@@ -70,4 +74,38 @@
     display: flex;
     max-width: 50%;
     height: 100%;
+}
+
+.Experiments {
+    margin: 0% 0% 0% 0%;
+}
+
+
+table {
+    font-size: 120%;
+    font-weight: 80;
+    background: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border: 1px solid black;
+}
+
+th {
+    font-weight: normal;
+    color: #000000;
+    background: #FFFFFF;
+    padding: 10px 8px;
+    border: 1px solid black;
+}
+
+td {
+    color: #000000;
+    background: rgba(146,168,209, 0.4);
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+tr {
+    border: 1px solid black;
+    border-collapse: collapse;
 }

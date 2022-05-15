@@ -3,12 +3,30 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
-from .models import Experiment
+from .models import Experiment, UsersGroup, ExperimentResult
 
 
 class PostSerializersExperiment(serializers.ModelSerializer):
     class Meta:
         model = Experiment
+        fields = "__all__"
+
+
+class PostSerializersExperimentResult(serializers.ModelSerializer):
+    class Meta:
+        model = ExperimentResult
+        fields = "__all__"
+
+
+class StartExperimentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Experiment
+        fields = ['id']
+
+
+class UserGroupsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UsersGroup
         fields = "__all__"
 
 

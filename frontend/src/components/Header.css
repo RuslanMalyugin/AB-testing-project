@@ -19,6 +19,7 @@
 .items {
     display: flex;
     align-items: center;
+    margin: 0% 0 3% 2%;
     justify-content: space-around;
 }
 
@@ -29,11 +30,11 @@
     font-weight: normal;
     text-decoration: none;
     font-size: 150%;
-    margin: 10% 25% 10% 25%;
-    padding: 10% 10% 10% 10%;
+    margin: 5% 2%;
+    padding: 10% 2% 1% 2%;
     flex-direction: column;
     white-space: nowrap;
-    gap: 15px;
+    /*gap: 15px;*/
     border: 0;
     font-family: 'PTSerif-Regular', sans-serif;
 }

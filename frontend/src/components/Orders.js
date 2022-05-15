@@ -1,7 +1,6 @@
 // import React, {Component} from 'react';
 // import Header from './Header';
 // import './Home.css';
-// import Footer from "./Footer";
 // import './Orders.css'
 // import {downloadOrders} from "../services/Api";
 //
@@ -44,17 +43,17 @@
 //     render() {
 //         return (
 //             this.state.catalogue.map(order => (
-//                     <tr onSubmit={this.handleSubmit}>
-//                         <td>{order.id}</td>
-//                         <td>{order.specialization}</td>
-//                         <td>{order.date}</td>
-//                         <td>{order.price + ' руб.'}</td>
-//                         <td>
-//                             <button className='TakeButton' onClick={() => this.handleClick(order)}>
-//                                 Добавить
-//                             </button>
-//                         </td>
-//                     </tr>
+//                 <tr onSubmit={this.handleSubmit}>
+//                     <td>{order.id}</td>
+//                     <td>{order.specialization}</td>
+//                     <td>{order.date}</td>
+//                     <td>{order.price + ' руб.'}</td>
+//                     <td>
+//                         <button className='TakeButton' onClick={() => this.handleClick(order)}>
+//                             Добавить
+//                         </button>
+//                     </td>
+//                 </tr>
 //             ))
 //         )
 //     }
@@ -77,7 +76,6 @@
 //                 <GetOrders/>
 //             </table>
 //         </div>
-//         <Footer/>
 //         </body>
 //     );
 // }
