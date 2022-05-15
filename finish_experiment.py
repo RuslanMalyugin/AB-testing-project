@@ -59,7 +59,7 @@ def get_result(a_group: list, b_group: list, connection_url: str,
         
     data = get_metrics(a_group, b_group, connection_url, main_metric, function)
     
-    t = tester.Tester(data[0], data[1], sign_level) 
+    t = tester.Tester(data[0], data[1], main_metric, sign_level) 
     boots_result = t.bootstrap()
     result = {}
     result["effect_value"] = boots_result["effect_value"]
