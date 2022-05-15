@@ -20,9 +20,10 @@ class Graph(object):
         self.mean = np.mean(tester_result["data"])
         self.var = np.var(tester_result["data"])
         self.conf_interval = tester_result["confidence interval"]
+        self.stat_significant = tester_result["statistically significant"]
         
     def answer(self, ):
-        if (0 < self.conf_interval[0] and 0 < self.conf_interval[1]):
+        if not self.stat_significant:
         	return "Effect is statistically insignificant"
         if self.conf_interval[1] <= 0:
             return "Lose"
