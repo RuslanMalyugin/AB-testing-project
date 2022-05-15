@@ -22,12 +22,13 @@ class Graph(object):
         self.conf_interval = tester_result["confidence interval"]
         
     def answer(self, ):
+        if (0 < self.conf_interval[0] and 0 < self.conf_interval[1]):
+        	return "Effect is statistically insignificant"
         if self.conf_interval[1] <= 0:
             return "Lose"
-        elif self.conf_interval[0] >= 0:
+        else self.conf_interval[0] >= 0:
             return "Win"
-        else: 
-            return "Next_time"
+        
             
         
         
