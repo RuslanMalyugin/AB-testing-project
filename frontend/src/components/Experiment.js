@@ -118,6 +118,10 @@ function Experiment() {
 
                             <div className='ExpText'>
                                 Статус: {res.is_finished ? "Завершен" : "Не завершен"}
+                                <br/>  {res.is_started && !res.is_finished ? "Начат" : ""}
+                                    {!res.is_started && !res.is_finished ? "Не начат" : ""}
+
+
                             </div>
 
 
@@ -132,11 +136,8 @@ function Experiment() {
                                             </button>
                                         </>) : (<></>)
                                     }
-                                    <button onClick={handleSubmitForDelete} className='ButtonMoreConcl'>
-                                        {/*<Link to={`/big_result/${current_id}`}></Link>*/}
-                                        Удалить эксперимент
-                                    </button>
-                                    {res.finish_date ? (
+
+                                    {res.finish_date && res.is_started ? (
 
                                         <>
                                             {Date.parse(res.finish_date.slice(5, 7) + "-" +
@@ -147,7 +148,7 @@ function Experiment() {
                                                     {/*<Link to={`/big_result/${current_id}`}></Link>*/}
                                                     Завершение эксперимента
                                                 </button>) : (
-                                                    <div className='ButtonMoreConcl'>
+                                                    <div className='ButtonConcl'>
                                                         Подождите
                                                         еще {Math.floor(Math.abs(Date.parse(res.finish_date.slice(5, 7)
                                                                 + "-"
@@ -168,24 +169,31 @@ function Experiment() {
 
                                         </>
                                     )}
+                                    <button onClick={handleSubmitForDelete} className='ButtonMoreConcl'>
+                                        {/*<Link to={`/big_result/${current_id}`}></Link>*/}
+                                        Удалить эксперимент
+                                    </button>
                                 </div>
 
 
                             ) : (
-                                <div>
-                                    <button onClick={handleSubmitForDelete} className='ButtonMoreConcl'>
+                                <div className='SmallRecUndButton '>
+                                    <button onClick={handleSubmitForDelete} className='ButtonConcl'>
                                         Удалить эксперимент
                                     </button>
-                                    <dev className='ButtonMoreConcl'>
+                                    <button className='ButtonMoreConcl'>
                                         <Link to={`/result/${current_id}`}>
                                             Итог
                                         </Link>
-                                    </dev>
+                                    </button>
                                 </div>
                             )}
                         </div>
 
                     </main>
+                    <div className="UndRec">
+
+                    </div>
 
                 </div>
             ) : (

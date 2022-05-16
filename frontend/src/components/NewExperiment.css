@@ -79,6 +79,7 @@ input:valid {
     background: #F7CAC9;
     border: 2px solid #000000;
     box-sizing: border-box;
+    font-family: 'PTSerif-Regular', sans-serif;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 48px;
     padding: 1% 5%;
@@ -89,6 +90,7 @@ input:valid {
     display: flex;
     background: #F7CAC9;
     border: 2px solid #000000;
+    font-family: 'PTSerif-Regular', sans-serif;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 48px;
