@@ -122,3 +122,21 @@ input:valid {
     /*&: hover;*/
 
 }
+
+.ButtonReturn {
+    background: #F7CAC9;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 48px;
+    padding: 1% 5%;
+    margin: 2% 43%;
+    font-size: 130%;
+    font-family: 'PTSerif-Regular', sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+.fig {
+    text-align: center; /* Выравнивание по центру */
+}

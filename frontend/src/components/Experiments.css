@@ -4,7 +4,16 @@
     align-content: center;
     background: #92A8D1;
     padding: 0 5%;
-    height: 77.5vh;
+    height: 90.5vh;
+}
+
+.NewMainRes {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: #92A8D1;
+    padding: 0 5%;
+    height: auto;
 }
 
 .Rectangle {

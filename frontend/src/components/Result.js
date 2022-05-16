@@ -43,7 +43,7 @@ function Result() {
             {user ? (
                 <div>
                     <Header/>
-                    <main className='NewMain'>
+                    <main className='NewMainRes'>
                         <div className='Rectangle'>
                             <div className='Menu'>
                                 <div className='SmallRecLeft'>
@@ -109,19 +109,21 @@ function Result() {
                             <div>
 
                                 {res.map(exp => (
-                                    <img src={"data:image/png;base64," + exp.graph.slice(2, -1)}/>
+                                    <p className="fig">
+                                        <img width={1500} src={"data:image/png;base64," + exp.graph.slice(2, -1)}/>
+                                    </p>
                                 ))}
                             </div>
 
 
-                            <div className='SmallRecUndButton '>
-                                <div className='ButtonConcl'>
+
+                                <div className='ButtonReturn'>
                                     <Link to={`/experiment/${current_id}`}> Назад </Link>
                                 </div>
 
 
 
-                            </div>
+
 
                         </div>
 
