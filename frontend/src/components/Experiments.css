@@ -1,0 +1,120 @@
+.NewMain {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: #92A8D1;
+    padding: 0 5%;
+    height: 90.5vh;
+}
+
+.NewMainRes {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: #92A8D1;
+    padding: 0 5%;
+    height: auto;
+}
+
+.Rectangle {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+
+    background: #FFFFFF;
+    border: solid #000000 1px;
+}
+
+.Menu {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.SmallRecLeft {
+    width: 50%;
+    font-size: 150%;
+    background: #F7CAC9;
+    padding: 1% 5% 1% 2%;
+    border: solid 1px #000000;
+    border-radius: 10px 0px 0 0;
+    text-align: center;
+}
+
+.Underline {
+    text-decoration: underline;
+}
+
+.SmallRecRight {
+    width: 50%;
+    font-size: 150%;
+    text-align: center;
+    background: #F7CAC9;
+    padding: 1% 5% 1% 2%;
+    border: solid 1px #000000;
+    border-radius: 0px 10px 0 0;
+}
+
+.RoundButton {
+    background: rgba(247, 202, 201, 0.58);
+    margin: 1%;
+    padding: 1%;
+    box-sizing: content-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 2vw;
+    width: 2vw;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 50%;
+}
+
+.SmallRecUndButton {
+    display: flex;
+    background: #FFFFFF;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.Plus {
+    padding: 1% 1% 1% 1%;
+    display: flex;
+    max-width: 50%;
+    height: 100%;
+}
+
+.Experiments {
+    margin: 0% 0% 0% 0%;
+}
+
+
+table {
+    font-size: 120%;
+    font-weight: 80;
+    background: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border: 1px solid black;
+}
+
+th {
+    font-weight: normal;
+    color: #000000;
+    background: #FFFFFF;
+    padding: 10px 8px;
+    border: 1px solid black;
+}
+
+td {
+    color: #000000;
+    background: rgba(146,168,209, 0.4);
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
